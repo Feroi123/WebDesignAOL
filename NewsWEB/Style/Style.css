@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+  --accent-color: #BEB7A4;
+  --base-color: White;
+  --text-color: black;
+  --input-color: White;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+body{
+  min-height: 100vh;
+  background-image: url(../Resources/Background.jpg);
+  background-size: cover;
+  background-position: right;
+  overflow: hidden;
+}
+
+.wrapper{
+  box-sizing: border-box;
+  background-color: var(--base-color);
+  height: 100vh;
+  width: max(40%, 600px);
+  padding: 10px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1{
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+form{
+  width: min(400px, 100%);
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+form > div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form label{
+  flex-shrink: 0;
+  height: 50px;
+  width: 50px;
+  background-color: var(--accent-color);
+  fill: var(--base-color);
+  color: var(--base-color);
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+form input{
+  box-sizing: border-box;
+  flex-grow: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 1em;
+  font: inherit;
+  border-radius: 0 10px 10px 0;
+  border: 2px solid var(--input-color);
+  border-left: none;
+  background-color: var(--input-color);
+  transition: 150ms ease;
+}
+
+form input:hover{
+  border-color: var(--accent-color);
+}
+
+form input:focus{
+  outline: none;
+  border-color: var(--text-color);
+}
+
+div:has(input:focus) label{
+  background-color: var(--text-color);
+}
+
+form input::placeholder{
+  color: var(--text-color);
+}
+
+form button{
+  margin-top: 10px;
+  border: none;
+  border-radius: 1000px;
+  padding: 0.85em 4em;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  font: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+form button:hover{
+  background-color: var(--text-color);
+}
+
+form button:focus{
+  outline: none;
+  background-color: var(--text-color);
+}
+
+a{
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+@media(max-width: 1100px) {
+  .wrapper{
+    width: min(600px, 100%);
+    border-radius: 0;
+  }
+}
+
+form div.incorrect label{
+  background-color: red;
+  
+}
+
+form div.incorrect input{
+  border-color: red;
+}
+
+#error-message{
+  color: red;
+}
+
+.d-flex{
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.navbar-logo{
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  font-size: 45px;
+  margin-left: 140px;
+}
+
+.search-style{
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding-left: 20px;
+  border-radius: 100px;
+}
+
+.search-button{
+  color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(0, 0, 0, 0.8);
+}
+  
+.search-button:hover{
+  transition: 0.5;
+  background-color: black;
+  color: white;
+}
+
+.daily-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9ecef;
+  position: absolute;
+  top: 120px;
+  left: 600px;
+  right: 600px;
+  height: 100px;
+  font-family: Poppins, sans-serif;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.items-list-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9ecef;
+  position: absolute;
+  top: 240px;
+  left: 300px;
+  right: 300px;
+  height: 500px;
+  font-family: Poppins, sans-serif;
+  gap: 5px;
+}
+
+.username-navbar-style{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: -8px;
+}
+
+.items-list{
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #BEB7A4;
+  width: 940px;
+  height: 160px;
+}
+
+.image-container{
+  width: 400px;
+  height: 160px;
+}
+
+.items-image{
+  margin-top: 3px;
+  margin-left: 3px;
+  width: 390px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.text-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.article-title{
+  margin: 0px;
+  margin-top: 4px;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+  padding-left: 4px;
+}
+
+.article-author{
+  margin: 0px;
+  font-size: 11px;
+  font-weight: bold;
+  opacity: 0.6;
+  padding-left: 4px;
+}
+
+.article-description{
+  font-size: 13px;
+  margin: 0px;
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+.details-container{
+  background-color: #e9ecef;
+  position: absolute;
+  top: 90px;
+  left: 200px;
+  right: 300px;
+  height: 550px;
+  font-family: Poppins, sans-serif;
+}
+
+.details-article-image-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1040px;
+  height: 300px;
+  margin-top: 10px;
+}
+
+.details-article-image{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 980px;
+  height: 300px;
+  margin-left: 10px;
+  margin-top: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.details-article-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 1040px;
+  font-size: 36px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.details-article-author{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  width: 1040px;
+  font-size: 12px;
+}
+
+.details-article-content{
+  width: 1040px;
+  font-size: 14px;
+}
